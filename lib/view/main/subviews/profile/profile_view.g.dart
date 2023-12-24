@@ -8,9 +8,9 @@ part of 'profile_view.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView(
-      this.data, {
-        Key? key,
-      }) : super(key: key);
+    this.data, {
+    Key? key,
+  }) : super(key: key);
 
   final void data;
 
