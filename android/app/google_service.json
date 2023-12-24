@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "744457001922",
+    "firebase_url": "https://pawket-ddaef-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "pawket-ddaef",
+    "storage_bucket": "pawket-ddaef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744457001922:android:6d7513a855c070ddc8945b",
+        "android_client_info": {
+          "package_name": "com.example.pawcat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVKURnmZSjLe0pzZ7X6Y7wKTqPeMwgPqY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

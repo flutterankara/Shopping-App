@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCgDoNjb3MftHXaMqTKI5YuoQdjYxKhep8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>744457001922</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.pawcat</string>
+	<key>PROJECT_ID</key>
+	<string>pawket-ddaef</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pawket-ddaef.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:744457001922:ios:02c3754076d39caac8945b</string>
+	<key>DATABASE_URL</key>
+	<string>https://pawket-ddaef-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
