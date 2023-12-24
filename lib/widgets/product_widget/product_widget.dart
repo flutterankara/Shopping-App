@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:pawcat/view/main/subviews/home/home_view.dart';
 
+part 'product_widget.g.dart';
+
 @swidget
 Widget productWidget(Product product,
         {Function(Product product)? addToCart, Function(Product product)? addToFavorite}) =>
