@@ -10,7 +10,10 @@ part 'favorite_view.g.dart';
 Widget favoriteView(void data) => ViewModelBuilder<FavoriteViewModel>.reactive(
       viewModelBuilder: () => FavoriteViewModel(),
       builder: (_, model, __) => Scaffold(
-        appBar: AppBar(title: Text('Favori Ürünler')),
+        appBar: AppBar(
+          title: Text('Favori Ürünler'),
+          leading: BackButton(),
+        ),
         body: ListView.builder(
           itemCount: model.favoriteProducts.length,
           itemBuilder: (context, index) {
