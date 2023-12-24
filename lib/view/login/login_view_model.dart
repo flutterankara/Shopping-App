@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stacked/stacked.dart';
+import 'package:pawcat/routing/routes.dart';
 
 class LoginViewModel extends ChangeNotifier {
   String _email = '';
@@ -42,12 +42,14 @@ class LoginViewModel extends ChangeNotifier {
 
     // Burada giriş işlemi gerçekleştirilebilir.
     // Örnek olarak sadece basit bir eşleştirme kontrolü yapılıyor.
-    if (_email == 'test@example.com' && _password == 'password') {
-      _isLoggedIn = true;
-      setErrorMessage('');
-    } else {
-      _isLoggedIn = false;
-      setErrorMessage('E-posta veya şifre hatalı.');
-    }
+    return Routes.main.call();
+    // if (_email == 'test@example.com' && _password == 'password') {
+    //   _isLoggedIn = true;
+
+    //   setErrorMessage('');
+    // } else {
+    //   _isLoggedIn = false;
+    //   setErrorMessage('E-posta veya şifre hatalı.');
+    // }
   }
 }

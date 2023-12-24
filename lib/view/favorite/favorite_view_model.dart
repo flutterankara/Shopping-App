@@ -3,11 +3,30 @@ import 'package:pawcat/view/main/subviews/home/home_view.dart';
 
 class FavoriteViewModel extends BaseViewModel {
   List<Product> products = [
+  Product(
+        'Ürün 3',
+        39.99,
+        'https://bayi.pelagos.com.tr/wanpy-tonsomon-2514-gr-krema-kedi-odulu-rac-052-oduller-wanpy-28751-26-K.jpg',
+        'Köpek',
+        false),
     Product(
-        'Ürün 1', 19.99, 'https://placekitten.com/200/200', 'Elektronik', true),
-    Product('Ürün 2', 29.99, 'https://placekitten.com/201/201', 'Giyim', false),
+        'Ürün 5',
+        39.99,
+        'https://bayi.pelagos.com.tr/wanpy-tonsomon-2514-gr-krema-kedi-odulu-rac-052-oduller-wanpy-28751-26-K.jpg',
+        'Köpek',
+        false),
     Product(
-        'Ürün 3', 39.99, 'https://placekitten.com/202/202', 'Ayakkabı', true),
+        'Ürün 7',
+        39.99,
+        'https://bayi.pelagos.com.tr/wanpy-tonsomon-2514-gr-krema-kedi-odulu-rac-052-oduller-wanpy-28751-26-K.jpg',
+        'Köpek',
+        true),
+    Product(
+        'Ürün 9',
+        39.99,
+        'https://bayi.pelagos.com.tr/wanpy-tonsomon-2514-gr-krema-kedi-odulu-rac-052-oduller-wanpy-28751-26-K.jpg',
+        'Köpek',
+        true),
     // Diğer ürünler...
   ];
 

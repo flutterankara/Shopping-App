@@ -3,26 +3,68 @@ import 'package:stacked/stacked.dart';
 
 class HomeViewmodel extends BaseViewModel {
   List<Product> products = [
-    Product('Ürün 1', 19.99, 'https://placekitten.com/200/200', 'Elektronik',
-        false),
-    Product('Ürün 2', 29.99, 'https://placekitten.com/201/201', 'Giyim', false),
     Product(
-        'Ürün 3', 39.99, 'https://placekitten.com/202/202', 'Ayakkabı', false),
+        'Ürün 1',
+        19.99,
+        'https://bayi.pelagos.com.tr/snacky-small-biftekli-kopek-odulu-46gr-x-24lu-odul-ve-kemikler-snacky-28949-26-K.jpg',
+        'Mama',
+        false),
+    Product(
+        'Ürün 2',
+        29.99,
+        'https://bayi.pelagos.com.tr/wanpy-taze-tavukluhavuclu-kedi-et-ezmesi-90-gr-oduller-wanpy-28672-26-K.jpg',
+        'Mama',
+        false),
+
+    Product(
+        'Ürün 3',
+        39.99,
+        'https://bayi.pelagos.com.tr/wanpy-tondeniz-tarakli-2514-gr-krema-kedi-odulu-rac-051-oduller-wanpy-28752-26-K.jpg',
+        'Kedi',
+        false),
+    Product(
+        'Ürün 3',
+        39.99,
+        'https://bayi.pelagos.com.tr/wanpy-tonsomon-2514-gr-krema-kedi-odulu-rac-052-oduller-wanpy-28751-26-K.jpg',
+        'Köpek',
+        false),
+    Product(
+        'Ürün 5',
+        39.99,
+        'https://bayi.pelagos.com.tr/wanpy-tonsomon-2514-gr-krema-kedi-odulu-rac-052-oduller-wanpy-28751-26-K.jpg',
+        'Köpek',
+        false),
+    Product(
+        'Ürün 7',
+        39.99,
+        'https://bayi.pelagos.com.tr/wanpy-tonsomon-2514-gr-krema-kedi-odulu-rac-052-oduller-wanpy-28751-26-K.jpg',
+        'Köpek',
+        false),
+    Product(
+        'Ürün 9',
+        39.99,
+        'https://bayi.pelagos.com.tr/wanpy-tonsomon-2514-gr-krema-kedi-odulu-rac-052-oduller-wanpy-28751-26-K.jpg',
+        'Köpek',
+        false),
     // Diğer ürünler...
   ];
 
   List<Product> displayedProducts = [];
 
-  List<String> categories = ['Tümü', 'Elektronik', 'Giyim', 'Ayakkabı'];
+  List<String> categories = ['Tümü', 'Mama', 'Kedi', 'Köpek'];
 
   List<Product> cart = [];
+
+  init() {
+    displayedProducts = List.from(products);
+    notifyListeners();
+  }
 
   void filterProductsByCategory(String category) {
     if (category == 'Tümü') {
       displayedProducts = List.from(products);
     } else {
-      displayedProducts =
-          products.where((product) => product.category == category).toList();
+      displayedProducts = products.where((product) => product.category == category).toList();
     }
     notifyListeners();
   }

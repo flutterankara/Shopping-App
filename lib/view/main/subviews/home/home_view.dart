@@ -8,53 +8,64 @@ part 'home_view.g.dart';
 
 @swidget
 Widget homeView(void data) => ViewModelBuilder<HomeViewmodel>.reactive(
-  viewModelBuilder: () => HomeViewmodel(),
-  builder: (_, model, __) => Scaffold(
-    body: SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(20.0), // İstediğiniz padding değerlerini ayarlayın
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(6.0), // Yuvarlaklık derecesini ayarlayın
-              child: Image.asset('lib/resources/pawketthumb.png'),
-            ),
-          ),
+      viewModelBuilder: () => HomeViewmodel(),
+      onViewModelReady: (model) => model.init(),
+      builder: (_, model, __) => Scaffold(
+        body: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0), // İstediğiniz padding değerlerini ayarlayın
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(6.0), // Yuvarlaklık derecesini ayarlayın
+                  child: Image.asset('lib/resources/pawketthumb.png'),
+                ),
+              ),
 
-          Container(
-            height: 60,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: model.categories.length,
-              itemBuilder: (_, index) {
-                final category = model.categories[index];
-                return GestureDetector(
-                  onTap: () => model.filterProductsByCategory(category),
-                  child: Container(
-                    margin: EdgeInsets.all(8),
-                    color: Colors.grey[200],
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: DDimens.s, horizontal: DDimens.l),
-                        child:
-                        Text(category, style: TextStyle(fontSize: 16)),
+              Container(
+                height: 60,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: model.categories.length,
+                  itemBuilder: (_, index) {
+                    final category = model.categories[index];
+                    return GestureDetector(
+                      onTap: () => model.filterProductsByCategory(category),
+                      child: Container(
+                        margin: EdgeInsets.all(8),
+                        color: Colors.grey[200],
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: DDimens.s, horizontal: DDimens.l),
+                            child: Text(category, style: TextStyle(fontSize: 16)),
+                          ),
+                        ),
                       ),
-                    ),
+                    );
+                  },
+                ),
+              ),
+              Expanded(
+                child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 0.8,
                   ),
-                );
-              },
-            ),
+                  itemCount: model.displayedProducts.length,
+                  itemBuilder: (_, index) {
+                    final product = model.displayedProducts[index];
+                    return productWidget(product, addToCart: model.addToCart, addToFavorite: (product) {});
+                  },
+                ),
+              ),
+              // ...
+            ],
           ),
-          // ...
-        ],
+        ),
+        // ...
       ),
-    ),
-    // ...
-  ),
-);
-
+    );
 
 class Product {
   final String name;
@@ -65,6 +76,3 @@ class Product {
 
   Product(this.name, this.price, this.imageUrl, this.category, this.isFavorite);
 }
-
-
-

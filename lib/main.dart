@@ -12,7 +12,7 @@ part 'main.g.dart';
 const supportedLocales = [Locale("tr")];
 void main() {
   initDependencies();
-  runApp(Pawcat(Routes.main.name));
+  runApp(Pawcat(Routes.login.name));
 }
 
 @swidget
