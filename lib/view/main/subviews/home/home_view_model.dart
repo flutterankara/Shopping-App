@@ -3,9 +3,11 @@ import 'package:stacked/stacked.dart';
 
 class HomeViewmodel extends BaseViewModel {
   List<Product> products = [
-    Product('Ürün 1', 19.99, 'https://placekitten.com/200/200', 'Elektronik'),
-    Product('Ürün 2', 29.99, 'https://placekitten.com/201/201', 'Giyim'),
-    Product('Ürün 3', 39.99, 'https://placekitten.com/202/202', 'Ayakkabı'),
+    Product('Ürün 1', 19.99, 'https://placekitten.com/200/200', 'Elektronik',
+        false),
+    Product('Ürün 2', 29.99, 'https://placekitten.com/201/201', 'Giyim', false),
+    Product(
+        'Ürün 3', 39.99, 'https://placekitten.com/202/202', 'Ayakkabı', false),
     // Diğer ürünler...
   ];
 
@@ -19,7 +21,8 @@ class HomeViewmodel extends BaseViewModel {
     if (category == 'Tümü') {
       displayedProducts = List.from(products);
     } else {
-      displayedProducts = products.where((product) => product.category == category).toList();
+      displayedProducts =
+          products.where((product) => product.category == category).toList();
     }
     notifyListeners();
   }
