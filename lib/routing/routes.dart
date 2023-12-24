@@ -4,6 +4,8 @@ import 'package:pawcat/view/favorite/favorite_view.dart';
 import 'package:pawcat/view/login/login_view.dart';
 import 'package:pawcat/view/main/main_view.dart';
 import 'package:pawcat/view/main/subviews/home/home_view.dart';
+import 'package:pawcat/view/main/subviews/orders/orders_view.dart';
+import 'package:pawcat/view/main/subviews/profile/profile_view.dart';
 import 'package:pawcat/view/product/product_view.dart';
 import 'package:pawcat/view/search/search_view.dart';
 
@@ -13,7 +15,9 @@ enum Routes<P> {
   favorite(FavoriteView.new),
   search(SearchView.new),
   home(HomeView.new),
-  main(MainView.new);
+  main(MainView.new),
+  profile(ProfileView.new),
+  orders(OrdersView.new);
 
   final Widget Function(P) _wb;
 
