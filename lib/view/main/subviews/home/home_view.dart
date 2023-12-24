@@ -28,8 +28,10 @@ Widget homeView(void data) => ViewModelBuilder<HomeViewmodel>.reactive(
                         color: Colors.grey[200],
                         child: Center(
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: DDimens.s, horizontal: DDimens.l),
-                            child: Text(category, style: TextStyle(fontSize: 16)),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: DDimens.s, horizontal: DDimens.l),
+                            child:
+                                Text(category, style: TextStyle(fontSize: 16)),
                           ),
                         ),
                       ),
@@ -47,7 +49,9 @@ Widget homeView(void data) => ViewModelBuilder<HomeViewmodel>.reactive(
                   itemCount: model.displayedProducts.length,
                   itemBuilder: (_, index) {
                     final product = model.displayedProducts[index];
-                    return productWidget(product, addToCart: model.addToCart, addToFavorite: (product) {});
+                    return productWidget(product,
+                        addToCart: model.addToCart,
+                        addToFavorite: (product) {});
                   },
                 ),
               ),
@@ -66,6 +70,7 @@ class Product {
   final double price;
   final String imageUrl;
   final String category;
+  bool isFavorite;
 
-  Product(this.name, this.price, this.imageUrl, this.category);
+  Product(this.name, this.price, this.imageUrl, this.category, this.isFavorite);
 }
