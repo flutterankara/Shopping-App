@@ -21,33 +21,46 @@ Widget mainView(void data) => ViewModelBuilder<MainViewModel>.reactive(
         extendBody: true,
         body: IndexedStack(index: model.currentIndex, children: [for (var i in model.pages) i.page]),
         bottomNavigationBar: Container(
+          margin: const EdgeInsets.all(16.0),
+
           clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
-            boxShadow: [BoxShadow(blurRadius: 10, color: Colors.grey.withOpacity(0.2), offset: Offset(1, 2))],
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(25),
-              topLeft: Radius.circular(25),
+
+            borderRadius: BorderRadius.circular(
+             14
             ),
+
+
           ),
           child: BottomNavigationBar(
+
+            unselectedItemColor: Colors.black54,
             selectedFontSize: 12.0,
             unselectedFontSize: 12.0,
             elevation: 1,
             type: BottomNavigationBarType.fixed,
             landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
-            backgroundColor: Colors.white,
+            backgroundColor: DColors.grey1,
             currentIndex: model.currentIndex,
             onTap: model.setIndex,
-            selectedItemColor: DColors.primary,
+            selectedItemColor: Colors.black,
+
             items: [
               for (var i in model.pages)
                 BottomNavigationBarItem(
+
                   label: i.label,
                   icon: i.icon,
                   activeIcon: i.activeIcon,
+
                 ),
             ],
           ),
         ),
       ),
     );
+
+
+
+
+//some widget )
