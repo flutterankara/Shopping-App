@@ -6,8 +6,8 @@ part of 'profile_view.dart';
 // FunctionalWidgetGenerator
 // **************************************************************************
 
-class MainView extends StatelessWidget {
-  const MainView(
+class ProfileView extends StatelessWidget {
+  const ProfileView(
     this.data, {
     Key? key,
   }) : super(key: key);
@@ -15,5 +15,5 @@ class MainView extends StatelessWidget {
   final void data;
 
   @override
-  Widget build(BuildContext _context) => mainView(data);
+  Widget build(BuildContext _context) => profileView(data);
 }
