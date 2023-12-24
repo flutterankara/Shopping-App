@@ -8,9 +8,9 @@ part of 'orders_view.dart';
 
 class OrdersView extends StatelessWidget {
   const OrdersView(
-    this.data, {
-    Key? key,
-  }) : super(key: key);
+      this.data, {
+        Key? key,
+      }) : super(key: key);
 
   final void data;
 
