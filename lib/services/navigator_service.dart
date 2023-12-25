@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:injectable/injectable.dart';
-import 'package:pawcat/resources/decorations.dart';
 import 'package:pawcat/routing/routes.dart';
 
 @lazySingleton
@@ -29,43 +27,6 @@ class NavigatorService {
   void goBack<T extends Object>([T? result]) => _currentState?.pop(result);
 
   void goBackUntil<T extends Object>(Routes until) => _currentState?.popUntil((r) => r.settings.name == until.name);
-
-  bottomSheet({required Widget child}) => showModalBottomSheet(
-        isScrollControlled: true,
-        context: context,
-        shape: bsBorder,
-        builder: (context) => SafeArea(child: Padding(padding: MediaQuery.of(context).viewInsets, child: child)),
-      );
-
-  search({required SearchDelegate delegate}) => showSearch(context: context, delegate: delegate);
-
-  dialog({
-    String? title,
-    String? description,
-    Widget? header,
-    String? negativeButtonText,
-    Function()? negativeButtonAction,
-    String? positiveButtonText,
-    Function()? positiveButtonAction,
-    bool persistent = false,
-  }) =>
-      showDialog(
-        context: context,
-        barrierDismissible: !persistent,
-        builder: (_) => Container()
-        // CustomDialogView(
-        //   title: title,
-        //   description: description,
-        //   header: header,
-        //   positiveButtonText: positiveButtonText ?? (persistent ? null : Tr.popupButtonText()),
-        //   positiveButtonAction: positiveButtonAction ?? (persistent ? null : () => goBack()),
-        //   negativeButtonText: negativeButtonText,
-        //   negativeButtonAction: negativeButtonAction ?? () => goBack(),
-        // ),
-      );
-
-
-
 
 
   closeKeyboard() => FocusScope.of(context).unfocus();

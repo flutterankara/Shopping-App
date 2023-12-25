@@ -20,12 +20,8 @@ Widget pawcat(BuildContext context, String firstRoute) {
   return MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'PAWCAT',
-    // supportedLocales: supportedLocales,
     theme: theme,
-    builder: (_, child) {
-      // child = LoadingObserver(child: child!);
-      return child!;
-    },
+    builder: (_, child) => child!,
     locale: Locale("tr"),
     navigatorKey: navigator.navigatorKey,
     navigatorObservers: [navigator.routeObserver],
@@ -41,6 +37,5 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) =>
           final uri = Uri.parse(settings.name!);
           final route = uri.route;
           Widget child = route.viewBuilder(uri.queryParameters['q']);
-          // child = Scaffold(body: SafeArea(child: AppBar(title: Text(route.name))));
           return child;
         });

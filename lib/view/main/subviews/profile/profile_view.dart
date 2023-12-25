@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
-import 'package:pawcat/resources/d_text_styles.dart';
 import 'package:pawcat/routing/routes.dart';
 import 'package:pawcat/view/main/subviews/profile/profile_view_model.dart';
 import 'package:stacked/stacked.dart';
